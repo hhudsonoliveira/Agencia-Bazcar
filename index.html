@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Agência Bazcar — Marketing Digital para Saúde e Odontologia na Bahia. Gestão de redes sociais, tráfego pago e identidade visual para clínicas e dentistas." />
+  <title>Agência Bazcar | Marketing Digital para Saúde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ── RESET & BASE ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0A0A0F;
+      --bg2:       #0F0F18;
+      --bg3:       #13131F;
+      --gold:      #F5A623;
+      --gold-dim:  #C4841A;
+      --gold-glow: rgba(245,166,35,0.18);
+      --white:     #FFFFFF;
+      --gray:      #A8A8B8;
+      --gray-dim:  #5A5A70;
+      --glass-bg:  rgba(255,255,255,0.04);
+      --glass-bdr: rgba(255,255,255,0.08);
+      --radius:    14px;
+      --font-head: 'Playfair Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── SCROLLBAR ──────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+    /* ── UTILITIES ──────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { padding: 100px 0; }
+    .section-alt { background: var(--bg2); }
+
+    .gold-line {
+      display: inline-block;
+      width: 52px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    .label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.18;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--gray);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-14px); }
+    }
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes pulseGold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(245,166,35,0.45); }
+      50%       { box-shadow: 0 0 0 16px rgba(245,166,35,0); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0);
+      transition: background 0.3s ease;
+    }
+    .btn:hover::after { background: rgba(255,255,255,0.08); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #F5A623 0%, #e8961a 100%);
+      color: #0A0A0F;
+      box-shadow: 0 4px 24px rgba(245,166,35,0.35);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(245,166,35,0.5);
+    }
+    .btn-gold:active { transform: translateY(0); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid var(--glass-bdr);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .btn-wa {
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.3);
+    }
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.45);
+    }
+
+    /* ── NAV ────────────────────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      padding: 20px 0;
+      transition: padding 0.4s ease, background 0.4s ease, backdrop-filter 0.4s ease;
+    }
+    #navbar.scrolled {
+      padding: 12px 0;
+      background: rgba(10,10,15,0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--glass-bdr);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-head);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, #F5A623, #e8961a);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #0A0A0F;
+    }
+    .logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray);
+      transition: color 0.25s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta { display: flex; align-items: center; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,10,15,0.97);
+      backdrop-filter: blur(20px);
+      z-index: 998;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--white);
+      transition: color 0.25s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ── HERO ───────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Mesh gradient background */
+    .hero-mesh {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-mesh::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 70vw;
+      height: 70vw;
+      background: radial-gradient(ellipse, rgba(245,166,35,0.12) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-mesh::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -5%;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(ellipse, rgba(100,80,245,0.07) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Floating orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .orb-1 {
+      width: 380px; height: 380px;
+      top: 8%; right: 6%;
+      background: radial-gradient(circle at 40% 40%,
+        rgba(245,166,35,0.14) 0%,
+        rgba(245,166,35,0.05) 40%,
+        transparent 70%);
+      border: 1px solid rgba(245,166,35,0.10);
+      animation: floatY 7s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 200px; height: 200px;
+      top: 20%; right: 14%;
+      background: radial-gradient(circle,
+        rgba(245,166,35,0.08) 0%,
+        transparent 70%);
+      border: 1px solid rgba(245,166,35,0.07);
+      animation: floatY 9s ease-in-out infinite reverse;
+    }
+    .orb-3 {
+      width: 120px; height: 120px;
+      bottom: 20%; left: 10%;
+      background: radial-gradient(circle,
+        rgba(200,180,255,0.06) 0%,
+        transparent 70%);
+      border: 1px solid rgba(200,180,255,0.06);
+      animation: floatY 11s ease-in-out infinite;
+    }
+
+    /* Grid lines decoration */
+    .grid-lines {
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%;
+      height: 100%;
+      opacity: 0.04;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, transparent 80%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      padding-top: 120px;
+      padding-bottom: 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: flex-start;
+    }
+
+    .hero-content {
+      min-width: 0;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 56px;
+      animation: fadeIn 0.9s 0.4s ease both;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+
+    .hero-image-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      border: 1px solid rgba(245,166,35,0.3);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-image-frame::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 35%;
+      background: linear-gradient(to top, rgba(10,10,15,0.5), transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 28px;
+      filter: brightness(0.9) saturate(1.05);
+    }
+
+    .hero-image-glow {
+      position: absolute;
+      inset: -20px;
+      border-radius: 40px;
+      background: radial-gradient(ellipse at 50% 50%,
+        rgba(245,166,35,0.14) 0%,
+        transparent 70%);
+      z-index: -1;
+    }
+
+    .hero-image-tag {
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      border-radius: 50px;
+      padding: 10px 20px;
+      color: #0A0A0F;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      box-shadow: 0 6px 24px rgba(245,166,35,0.4);
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding-top: 100px;
+      }
+      .hero-image-wrap { order: -1; }
+      .hero-image-frame { max-width: 320px; margin: 0 auto; }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-bdr);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 28px;
+      animation: fadeUp 0.7s ease both;
+    }
+    .hero-badge i { font-size: 0.7rem; }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: fadeUp 0.7s 0.15s ease both;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-title .highlight {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-title .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 4px; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      border-radius: 2px;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 540px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      animation: fadeUp 0.7s 0.45s ease both;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--glass-bdr);
+      animation: fadeUp 0.7s 0.6s ease both;
+    }
+    .hero-stat {}
+    .hero-stat-num {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: var(--gray-dim);
+      margin-top: 4px;
+    }
+
+    /* ── SERVICES ───────────────────────────────────────────── */
+    #servicos { background: var(--bg2); }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .services-header .section-sub { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-bdr);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition: border-color 0.35s, transform 0.35s, box-shadow 0.35s;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(245,166,35,0.05) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .service-card:hover {
+      border-color: rgba(245,166,35,0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(245,166,35,0.12);
+    }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, rgba(245,166,35,0.15), rgba(245,166,35,0.05));
+      border: 1px solid rgba(245,166,35,0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--gold);
+      transition: background 0.35s;
+    }
+    .service-card:hover .service-icon {
+      background: linear-gradient(135deg, rgba(245,166,35,0.25), rgba(245,166,35,0.1));
+    }
+
+    .service-num {
+      font-family: var(--font-head);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: rgba(245,166,35,0.08);
+      line-height: 1;
+      transition: color 0.35s;
+    }
+    .service-card:hover .service-num { color: rgba(245,166,35,0.15); }
+
+    .service-title {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      transition: color 0.35s;
+    }
+    .service-card:hover .service-title { color: var(--gold); }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .service-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 50px;
+      background: rgba(245,166,35,0.08);
+      border: 1px solid rgba(245,166,35,0.15);
+      color: var(--gold);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── RESULTS ────────────────────────────────────────────── */
+    #resultados { position: relative; overflow: hidden; }
+
+    #resultados::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(245,166,35,0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .results-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .results-left .section-sub { margin-bottom: 32px; }
+
+    .results-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .results-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--gray);
+    }
+    .results-list li i {
+      color: var(--gold);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-bdr);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.35s, transform 0.35s;
+    }
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .stat-card:hover {
+      border-color: rgba(245,166,35,0.3);
+      transform: translateY(-4px);
+    }
+    .stat-card:hover::after { transform: scaleX(1); }
+
+    .stat-card.featured {
+      grid-column: span 2;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: linear-gradient(135deg,
+        rgba(245,166,35,0.08) 0%,
+        rgba(245,166,35,0.03) 100%);
+      border-color: rgba(245,166,35,0.2);
+    }
+
+    .stat-icon {
+      width: 48px; height: 48px;
+      border-radius: 10px;
+      background: rgba(245,166,35,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.4;
+    }
+
+    /* ── ABOUT ──────────────────────────────────────────────── */
+    #sobre { background: var(--bg2); }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      max-width: 780px;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .about-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      border: 1px solid rgba(245,166,35,0.25);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .about-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(10,10,15,0.55), transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .about-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 24px;
+      filter: brightness(0.92) saturate(1.05);
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .about-img-wrap:hover img {
+      transform: scale(1.03);
+      filter: brightness(1) saturate(1.1);
+    }
+
+    /* Glow ring behind the image */
+    .about-img-glow {
+      position: absolute;
+      inset: -12px;
+      border-radius: 32px;
+      background: radial-gradient(ellipse at 60% 40%,
+        rgba(245,166,35,0.12) 0%,
+        transparent 70%);
+      z-index: -1;
+    }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: -12px; right: -12px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      border-radius: 12px;
+      padding: 16px 20px;
+      color: #0A0A0F;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 28px rgba(245,166,35,0.4);
+      animation: floatY 5s ease-in-out infinite;
+    }
+    .about-badge-float i { font-size: 1.1rem; }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .value-dot {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: rgba(245,166,35,0.1);
+      border: 1px solid rgba(245,166,35,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .value-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .value-text span {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    /* ── CONTACT ────────────────────────────────────────────── */
+    #contato { position: relative; overflow: hidden; }
+
+    #contato::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(245,166,35,0.4) 50%,
+        transparent 100%);
+    }
+
+    .contact-inner {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .contact-inner .section-title { margin-bottom: 16px; }
+
+    .contact-sub {
+      font-size: 1.05rem;
+      color: var(--gray);
+      margin-bottom: 44px;
+      line-height: 1.75;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 52px;
+    }
+
+    .contact-info-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      padding-top: 44px;
+      border-top: 1px solid var(--glass-bdr);
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--gray);
+      transition: color 0.25s;
+    }
+    .contact-info-item:hover { color: var(--white); }
+    .contact-info-item i {
+      width: 36px; height: 36px;
+      border-radius: 9px;
+      background: rgba(245,166,35,0.08);
+      border: 1px solid rgba(245,166,35,0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 0.85rem;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--glass-bdr);
+      padding: 36px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--gray-dim);
+    }
+    .footer-copy span { color: var(--gold); }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+    .social-btn {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-bdr);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      color: var(--gray);
+      transition: all 0.25s;
+    }
+    .social-btn:hover {
+      background: rgba(245,166,35,0.1);
+      border-color: rgba(245,166,35,0.3);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--gray-dim);
+      transition: color 0.25s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── FLOATING WA BUTTON ─────────────────────────────────── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 900;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: pulseGold 2.5s infinite;
+    }
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.55);
+    }
+
+    /* ── PROGRESS BAR ───────────────────────────────────────── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, var(--gold), #f5c842);
+      z-index: 1001;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .results-inner,
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .about-img-wrap { max-width: 320px; margin: 0 auto; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 640px) {
+      .section { padding: 72px 0; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-card.featured { grid-column: span 1; }
+      .hero-stats { gap: 20px; }
+      .contact-info-row { gap: 20px; }
+      .about-values { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+
+    /* ── COUNTER ────────────────────────────────────────────── */
+    .counting { display: inline-block; }
+
+    /* ── SECTION DIVIDER ────────────────────────────────────── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        var(--glass-bdr) 30%,
+        var(--glass-bdr) 70%,
+        transparent 100%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PROGRESS BAR -->
+  <div id="progress-bar"></div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5575991953748?text=Olá! Vim pelo site da Agência Bazcar e gostaria de saber mais sobre os serviços."
+     class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" aria-label="Navegação principal">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="logo" aria-label="Agência Bazcar">
+          <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+          Agência <span>Bazcar</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="https://wa.me/5575991953748?text=Olá! Vim pelo site da Agência Bazcar."
+             class="btn btn-gold" target="_blank" rel="noopener" style="padding:10px 22px; font-size:0.88rem;">
+            <i class="fab fa-whatsapp"></i> Falar Agora
+          </a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+    <a href="#servicos"   class="mobile-link">Serviços</a>
+    <a href="#resultados" class="mobile-link">Resultados</a>
+    <a href="#sobre"      class="mobile-link">Sobre</a>
+    <a href="#contato"    class="mobile-link">Contato</a>
+    <a href="https://wa.me/5575991953748" class="btn btn-wa" target="_blank" rel="noopener" style="margin-top:12px;">
+      <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero" aria-label="Apresentação">
+    <div class="hero-mesh"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="orb orb-3" aria-hidden="true"></div>
+    <div class="grid-lines" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Texto -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-map-marker-alt"></i>
+            Marketing Digital · Saúde & Odontologia · Bahia
+          </div>
+
+          <h1 class="hero-title">
+            Sua clínica merece<br />
+            crescer de forma<br />
+            <em class="highlight">inteligente.</em>
+          </h1>
+
+          <p class="hero-sub">
+            Somos especialistas em marketing digital para saúde e odontologia.
+            Conectamos sua clínica aos pacientes certos — com estratégia, criatividade
+            e resultados que você pode medir.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/5575991953748?text=Olá! Quero conhecer as soluções da Agência Bazcar para minha clínica."
+               class="btn btn-gold" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i>
+              Solicitar Proposta
+            </a>
+            <a href="#servicos" class="btn btn-outline">
+              Ver Serviços <i class="fas fa-arrow-down" style="font-size:0.8rem;"></i>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-num"><span class="counting" data-target="120">0</span>+</div>
+              <div class="hero-stat-label">Clientes atendidos</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num"><span class="counting" data-target="5000">0</span>+</div>
+              <div class="hero-stat-label">Posts publicados</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num"><span class="counting" data-target="98">0</span>%</div>
+              <div class="hero-stat-label">Taxa de satisfação</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num"><span class="counting" data-target="3">0</span>+</div>
+              <div class="hero-stat-label">Anos de experiência</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagem da equipe -->
+        <div class="hero-image-wrap">
+          <div class="hero-image-glow"></div>
+          <div class="hero-image-frame">
+            <img src="img/Foto de Perfil Bazcar.jpeg" alt="Equipe Agência Bazcar" loading="eager" />
+          </div>
+          <div class="hero-image-tag">
+            <i class="fas fa-bolt"></i> Agência Bazcar
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════════ -->
+  <section id="servicos" class="section" aria-labelledby="servicos-titulo">
+    <div class="container">
+      <div class="services-header">
+        <div class="label reveal">
+          <div class="gold-line"></div>
+          O que fazemos
+        </div>
+        <h2 class="section-title reveal reveal-delay-1" id="servicos-titulo">
+          Soluções completas para<br />
+          clínicas e profissionais de saúde
+        </h2>
+        <p class="section-sub reveal reveal-delay-2">
+          Do planejamento à execução, cuidamos da presença digital da sua clínica
+          para que você foque no que realmente importa: seus pacientes.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Card 1 -->
+        <article class="service-card reveal reveal-delay-1" tabindex="0">
+          <div class="service-card-top">
+            <div class="service-icon"><i class="fas fa-share-nodes"></i></div>
+            <span class="service-num">01</span>
+          </div>
+          <h3 class="service-title">Gestão de Redes Sociais</h3>
+          <p class="service-desc">
+            Criação de conteúdo estratégico, programação de posts e engajamento
+            contínuo no Instagram, Facebook e LinkedIn da sua clínica.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Instagram</span>
+            <span class="service-tag">Facebook</span>
+            <span class="service-tag">Conteúdo</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="service-card reveal reveal-delay-2" tabindex="0">
+          <div class="service-card-top">
+            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+            <span class="service-num">02</span>
+          </div>
+          <h3 class="service-title">Tráfego Pago</h3>
+          <p class="service-desc">
+            Campanhas otimizadas no Meta Ads e Google Ads segmentadas para
+            atrair pacientes qualificados e maximizar seu ROI.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Meta Ads</span>
+            <span class="service-tag">Google Ads</span>
+            <span class="service-tag">ROI</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="service-card reveal reveal-delay-3" tabindex="0">
+          <div class="service-card-top">
+            <div class="service-icon"><i class="fas fa-palette"></i></div>
+            <span class="service-num">03</span>
+          </div>
+          <h3 class="service-title">Identidade Visual</h3>
+          <p class="service-desc">
+            Criação de marca profissional, manual de identidade visual, materiais
+            gráficos e comunicação coerente em todos os canais.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Branding</span>
+            <span class="service-tag">Design</span>
+            <span class="service-tag">Visual</span>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="service-card reveal reveal-delay-4" tabindex="0">
+          <div class="service-card-top">
+            <div class="service-icon"><i class="fas fa-tooth"></i></div>
+            <span class="service-num">04</span>
+          </div>
+          <h3 class="service-title">Marketing para Saúde</h3>
+          <p class="service-desc">
+            Estratégias específicas para clínicas, dentistas e médicos dentro das
+            normas do CFO e CFM — ético, eficaz e orientado a resultados.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Odontologia</span>
+            <span class="service-tag">Medicina</span>
+            <span class="service-tag">CFO/CFM</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       RESULTS
+  ═══════════════════════════════════════════ -->
+  <section id="resultados" class="section" aria-labelledby="resultados-titulo">
+    <div class="container">
+      <div class="results-inner">
+
+        <div class="results-left">
+          <div class="label reveal">
+            <div class="gold-line"></div>
+            Nossos números
+          </div>
+          <h2 class="section-title reveal reveal-delay-1" id="resultados-titulo">
+            Resultados que<br />
+            falam por si
+          </h2>
+          <p class="section-sub reveal reveal-delay-2">
+            Cada número reflete a dedicação da nossa equipe e a confiança
+            dos profissionais de saúde que escolheram a Bazcar para crescer.
+          </p>
+
+          <ul class="results-list reveal reveal-delay-3">
+            <li><i class="fas fa-check-circle"></i> Relatórios mensais de desempenho detalhados</li>
+            <li><i class="fas fa-check-circle"></i> Atendimento humanizado e personalizado</li>
+            <li><i class="fas fa-check-circle"></i> Estratégias alinhadas às normas do CFO/CFM</li>
+            <li><i class="fas fa-check-circle"></i> Equipe especializada no nicho saúde</li>
+          </ul>
+        </div>
+
+        <div class="stats-grid reveal reveal-delay-2">
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-num"><span class="counting" data-target="120">0</span>+</div>
+            <div class="stat-label">Clientes<br />atendidos</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-image"></i></div>
+            <div class="stat-num"><span class="counting" data-target="5000">0</span>+</div>
+            <div class="stat-label">Posts<br />criados</div>
+          </div>
+
+          <div class="stat-card featured">
+            <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+            <div>
+              <div class="stat-num"><span class="counting" data-target="300">0</span>+</div>
+              <div class="stat-label">Campanhas de tráfego pago ativadas com resultados comprovados</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════ -->
+  <section id="sobre" class="section section-alt" aria-labelledby="sobre-titulo">
+    <div class="container">
+      <div class="about-inner">
+
+        <div class="about-text">
+          <div class="label reveal">
+            <div class="gold-line"></div>
+            Sobre nós
+          </div>
+          <h2 class="section-title reveal reveal-delay-1" id="sobre-titulo">
+            Nascemos para<br />
+            transformar clínicas
+          </h2>
+
+          <p class="reveal reveal-delay-2">
+            A <strong>Agência Bazcar</strong> nasceu da Bahia com um propósito claro:
+            ser a parceira estratégica de clínicas, dentistas e profissionais de saúde
+            que querem crescer no digital de forma ética e eficiente.
+          </p>
+          <p class="reveal reveal-delay-2">
+            Entendemos as particularidades do marketing na área da saúde — as restrições
+            do CFO e CFM, a sensibilidade do público e a importância da confiança.
+            Por isso, cada estratégia é construída com responsabilidade e criatividade.
+          </p>
+          <p class="reveal reveal-delay-2">
+            Nossa missão é simples: <strong style="color:var(--gold)">fazer sua clínica ser
+            encontrada, escolhida e recomendada</strong> — enquanto você se dedica
+            integralmente ao cuidado dos seus pacientes.
+          </p>
+
+          <div class="about-values reveal reveal-delay-3">
+            <div class="value-item">
+              <div class="value-dot"><i class="fas fa-check"></i></div>
+              <div class="value-text">
+                <strong>Ética & Compliance</strong>
+                <span>Dentro das normas CFO/CFM</span>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-dot"><i class="fas fa-check"></i></div>
+              <div class="value-text">
+                <strong>Resultado Comprovado</strong>
+                <span>Métricas reais e transparentes</span>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-dot"><i class="fas fa-check"></i></div>
+              <div class="value-text">
+                <strong>Atendimento Premium</strong>
+                <span>Equipe dedicada e acessível</span>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-dot"><i class="fas fa-check"></i></div>
+              <div class="value-text">
+                <strong>Foco no Nicho</strong>
+                <span>100% saúde e odontologia</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:36px;" class="reveal reveal-delay-4">
+            <a href="https://wa.me/5575991953748?text=Olá! Quero saber mais sobre a Agência Bazcar."
+               class="btn btn-gold" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i> Falar com a Equipe
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════ -->
+  <section id="contato" class="section" aria-labelledby="contato-titulo">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="label reveal" style="justify-content:center;">
+          <div class="gold-line"></div>
+          Vamos conversar
+        </div>
+
+        <h2 class="section-title reveal reveal-delay-1" id="contato-titulo">
+          Pronto para<br />
+          <em style="font-style:italic; color:var(--gold);">transformar</em> sua presença digital?
+        </h2>
+
+        <p class="contact-sub reveal reveal-delay-2">
+          Entre em contato agora mesmo. Nossa equipe está pronta para entender
+          o seu negócio e criar a estratégia ideal para a sua clínica.
+        </p>
+
+        <div class="contact-actions reveal reveal-delay-3">
+          <a href="https://wa.me/5575991953748?text=Olá! Vim pelo site e quero uma proposta da Agência Bazcar."
+             class="btn btn-wa" target="_blank" rel="noopener" style="font-size:1rem; padding:16px 32px;">
+            <i class="fab fa-whatsapp"></i>
+            Chamar no WhatsApp
+          </a>
+          <a href="mailto:estudiobazcar@gmail.com"
+             class="btn btn-outline" style="font-size:1rem; padding:16px 32px;">
+            <i class="fas fa-envelope"></i>
+            Enviar E-mail
+          </a>
+        </div>
+
+        <div class="contact-info-row reveal reveal-delay-4">
+          <a href="https://wa.me/5575991953748" class="contact-info-item" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            <span>+55 75 9195-3748</span>
+          </a>
+          <a href="mailto:estudiobazcar@gmail.com" class="contact-info-item">
+            <i class="fas fa-envelope"></i>
+            <span>estudiobazcar@gmail.com</span>
+          </a>
+          <a href="https://www.instagram.com/agenciabazcar/" class="contact-info-item" target="_blank" rel="noopener">
+            <i class="fab fa-instagram"></i>
+            <span>@agenciabazcar</span>
+          </a>
+          <div class="contact-info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Bahia, Brasil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">
+          © 2026 <span>Agência Bazcar</span>. Todos os direitos reservados.<br />
+          Marketing Digital para Saúde &amp; Odontologia · Bahia, Brasil<br />
+          Feito por <a href="https://www.instagram.com/hhudson.oliveira" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">@hhudson.oliveira</a>
+        </p>
+
+        <div class="footer-links">
+          <a href="#servicos">Serviços</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://www.instagram.com/agenciabazcar/" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/5575991953748" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:estudiobazcar@gmail.com" class="social-btn" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ── NAVBAR SCROLL ────────────────────────────────────── */
+    const navbar = document.getElementById('navbar');
+    const progressBar = document.getElementById('progress-bar');
+
+    window.addEventListener('scroll', () => {
+      // Navbar shrink
+      if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      // Progress bar
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + '%';
+    }, { passive: true });
+
+    /* ── MOBILE MENU ──────────────────────────────────────── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+
+    function closeMobileMenu() {
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('open');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        hamburger.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+        mobileMenu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    /* ── REVEAL ON SCROLL ─────────────────────────────────── */
+    const revealEls = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    /* ── COUNTER ANIMATION ────────────────────────────────── */
+    function animateCounter(el, target, duration = 1800) {
+      const start = performance.now();
+      const isLarge = target >= 1000;
+
+      function easeOutExpo(t) {
+        return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+      }
+
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutExpo(progress);
+        const current = Math.round(eased * target);
+        el.textContent = isLarge
+          ? current.toLocaleString('pt-BR')
+          : current;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    const counterEls = document.querySelectorAll('.counting');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.dataset.target, 10);
+          animateCounter(entry.target, target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counterEls.forEach(el => counterObserver.observe(el));
+
+    /* ── SMOOTH ACTIVE NAV ────────────────────────────────── */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinksAll = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 100;
+        if (window.scrollY >= top) current = section.getAttribute('id');
+      });
+      navLinksAll.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current
+          ? 'var(--white)'
+          : '';
+      });
+    }, { passive: true });
+  </script>
+</body>
+</html>
