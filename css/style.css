@@ -1026,7 +1026,9 @@ footer {
   animation: marqueeScroll 28s linear infinite;
 }
 
-.portfolio-carousel:hover .carousel-track { animation-play-state: paused; }
+@media (hover: hover) {
+  .portfolio-carousel:hover .carousel-track { animation-play-state: paused; }
+}
 
 @keyframes marqueeScroll {
   from { transform: translateX(0); }
