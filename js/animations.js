@@ -228,6 +228,7 @@
       lbImg.style.display = 'none';
       lbVideo.style.display = 'block';
       lbVideo.src = src;
+      lbVideo.load();
       lbPrev.style.display = 'none';
       lbNext.style.display = 'none';
       lightbox.removeAttribute('hidden');
@@ -289,9 +290,12 @@
     track.addEventListener('touchend', function (e) {
       var dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
       var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
-      if (lightbox.hasAttribute('hidden')) {
-        setTimeout(function () { track.style.animationPlayState = ''; }, dx < 8 && dy < 8 ? 800 : 1200);
-      }
+      var delay = dx < 8 && dy < 8 ? 900 : 1200;
+      setTimeout(function () {
+        if (lightbox.hasAttribute('hidden')) {
+          track.style.animationPlayState = '';
+        }
+      }, delay);
     }, { passive: true });
   }
 
