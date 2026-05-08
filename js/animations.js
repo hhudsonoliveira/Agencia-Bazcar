@@ -101,7 +101,11 @@
   // Reconstrói o <h1> dinamicamente: texto plano + <br> nas quebras + <em> no último segmento
   function initTypewriter() {
     var el = document.querySelector('.typewriter[data-text]');
-    if (!el || reducedMotion) return;
+    if (!el) return;
+
+    var isMobileTw  = window.innerWidth < 768;
+    var baseSpeed   = isMobileTw ? 35 : 42;
+    var startDelay  = isMobileTw ? 400 : 900;
 
     // Segmentos separados por "|" no data-text
     var segments = el.getAttribute('data-text').split('|');
@@ -113,11 +117,9 @@
     cursor.setAttribute('aria-hidden', 'true');
     cursor.textContent = '|';
 
-    // Limpa o h1 (seguro: opacity:0 via CSS animation antes do JS rodar)
     el.innerHTML = '';
     el.appendChild(cursor);
 
-    // Nós de texto para cada segmento (criados sob demanda)
     var textNodes = [];
 
     function getNode(idx) {
@@ -126,7 +128,6 @@
       var node = document.createTextNode('');
 
       if (idx === lastIdx) {
-        // Último segmento entra dentro de <em class="highlight">
         var em = document.createElement('em');
         em.className = 'highlight';
         em.appendChild(node);
@@ -139,7 +140,6 @@
       return node;
     }
 
-    // Achata em lista de tokens: caracteres + marcadores de quebra de linha
     var tokens = [];
     segments.forEach(function (seg, idx) {
       for (var c = 0; c < seg.length; c++) {
@@ -151,11 +151,9 @@
     });
 
     var i = 0;
-    var baseSpeed = 42; // ms por caractere
 
     function type() {
       if (i >= tokens.length) {
-        // Cursor diminui após concluir
         setTimeout(function () { cursor.classList.add('done'); }, 1200);
         return;
       }
@@ -163,18 +161,16 @@
       var token = tokens[i++];
 
       if (token.type === 'br') {
-        // Pausa visual na quebra de linha antes de continuar
         el.insertBefore(document.createElement('br'), cursor);
-        setTimeout(type, 160);
+        setTimeout(type, 140);
       } else {
         getNode(token.seg).textContent += token.ch;
-        var jitter = Math.random() * 28 - 14;
+        var jitter = Math.random() * 20 - 10;
         setTimeout(type, baseSpeed + jitter);
       }
     }
 
-    // Inicia após o fadeUp do h1 terminar (~0.15s delay + 0.7s duração)
-    setTimeout(type, 900);
+    setTimeout(type, startDelay);
   }
 
   initTypewriter();
