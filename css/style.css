@@ -32,7 +32,7 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip não cria scroll container — evita bug do IntersectionObserver no iOS Safari */
 }
 
 img { display: block; max-width: 100%; }

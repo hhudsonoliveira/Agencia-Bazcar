@@ -18,10 +18,10 @@
       el.classList.add('revealed');
     });
   } else {
-    const revealObserver = new IntersectionObserver(function (entries) {
+    var isMobile = window.innerWidth < 768;
+    var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          // Aplica stagger via data-delay (em ms)
           var delay = entry.target.dataset.delay;
           if (delay) {
             entry.target.style.transitionDelay = delay + 'ms';
@@ -31,8 +31,8 @@
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: isMobile ? 0.05 : 0.15,
+      rootMargin: isMobile ? '0px 0px 0px 0px' : '0px 0px -40px 0px'
     });
 
     revealEls.forEach(function (el) {
