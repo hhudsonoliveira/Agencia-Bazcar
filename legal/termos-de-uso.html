@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Termos de Uso da Agência Bazcar — condições para contratação de serviços de marketing digital para saúde e odontologia na Bahia." />
+  <meta name="robots" content="noindex, follow" />
+  <title>Termos de Uso | Agência Bazcar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+
+  <style>
+    /* === LEGAL PAGE — estilos específicos === */
+    .legal-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--gray-dim);
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--gold); transition: opacity 0.2s; }
+    .breadcrumb a:hover { opacity: 0.8; }
+    .breadcrumb i { font-size: 0.65rem; color: var(--gray-dim); }
+
+    .legal-header {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--glass-bdr);
+    }
+    .legal-header .label { margin-bottom: 12px; }
+    .legal-header h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .legal-meta {
+      font-size: 0.82rem;
+      color: var(--gray-dim);
+    }
+    .legal-meta span { color: var(--gold); }
+
+    .legal-body h2 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      margin: 40px 0 14px;
+      padding-left: 14px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .legal-body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin: 24px 0 10px;
+    }
+
+    .legal-body p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .legal-body ul, .legal-body ol {
+      margin: 12px 0 20px 20px;
+    }
+    .legal-body li {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .legal-body li::marker { color: var(--gold); }
+
+    .legal-body strong { color: var(--white); font-weight: 600; }
+
+    .legal-body a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-decoration-color: rgba(245,166,35,0.4);
+      transition: text-decoration-color 0.2s;
+    }
+    .legal-body a:hover { text-decoration-color: var(--gold); }
+
+    .legal-highlight {
+      background: rgba(245,166,35,0.06);
+      border: 1px solid rgba(245,166,35,0.15);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .legal-highlight p { margin-bottom: 0; }
+
+    .back-btn-wrap {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--glass-bdr);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5571984027347?text=Olá! Vim pelo site da Agência Bazcar e gostaria de saber mais sobre os serviços."
+     class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" aria-label="Navegação principal">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="logo" aria-label="Agência Bazcar">
+          <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+          Agência <span>Bazcar</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="../index.html#servicos">Serviços</a></li>
+          <li><a href="../index.html#resultados">Resultados</a></li>
+          <li><a href="../index.html#sobre">Sobre</a></li>
+          <li><a href="../index.html#contato">Contato</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="https://wa.me/5571984027347?text=Olá! Vim pelo site da Agência Bazcar."
+             class="btn btn-gold" target="_blank" rel="noopener" style="padding:10px 22px; font-size:0.88rem;">
+            <i class="fab fa-whatsapp"></i> Falar Agora
+          </a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+    <a href="../index.html#servicos" class="mobile-link">Serviços</a>
+    <a href="../index.html#resultados" class="mobile-link">Resultados</a>
+    <a href="../index.html#sobre" class="mobile-link">Sobre</a>
+    <a href="../index.html#contato" class="mobile-link">Contato</a>
+    <a href="https://wa.me/5571984027347" class="btn btn-wa" target="_blank" rel="noopener" style="margin-top:12px;">
+      <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+    </a>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main style="padding-top: 88px;">
+    <div class="legal-wrap">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Localização na página">
+        <a href="../index.html">Início</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Termos de Uso</span>
+      </nav>
+
+      <!-- Cabeçalho -->
+      <header class="legal-header">
+        <div class="label">
+          <div class="gold-line"></div>
+          Documentos Legais
+        </div>
+        <h1>Termos de Uso</h1>
+        <p class="legal-meta">
+          Última atualização: <span>Janeiro de 2026</span> &nbsp;·&nbsp;
+          Versão 1.0
+        </p>
+      </header>
+
+      <!-- Corpo -->
+      <div class="legal-body">
+
+        <p>
+          Ao contratar os serviços da <strong>Agência Bazcar / Estúdio Bazcar</strong>,
+          o cliente declara ter lido, compreendido e concordado com todos os termos e
+          condições descritos neste documento. Leia com atenção antes de prosseguir.
+        </p>
+
+        <!-- 1. Identificação da empresa -->
+        <h2>1. Identificação da Empresa</h2>
+        <p>
+          Os serviços descritos neste documento são prestados por:
+        </p>
+        <div class="legal-highlight">
+          <p>
+            <strong>Razão Social:</strong> Agência Bazcar / Estúdio Bazcar<br />
+            <strong>E-mail de contato:</strong> <a href="mailto:estudiobazcar@gmail.com">estudiobazcar@gmail.com</a><br />
+            <strong>WhatsApp:</strong> <a href="https://wa.me/5571984027347" target="_blank" rel="noopener">+55 71 98402-7347</a><br />
+            <strong>Instagram:</strong> <a href="https://www.instagram.com/agenciabazcar/" target="_blank" rel="noopener">@agenciabazcar</a><br />
+            <strong>Localização:</strong> Bahia, Brasil
+          </p>
+        </div>
+
+        <!-- 2. Objeto dos serviços -->
+        <h2>2. Objeto dos Serviços</h2>
+        <p>
+          A Agência Bazcar presta serviços de marketing digital especializados para
+          clínicas, consultórios, dentistas, médicos e demais profissionais da área
+          de saúde e odontologia, compreendendo, entre outros:
+        </p>
+        <ul>
+          <li><strong>Gestão de Redes Sociais:</strong> planejamento, criação e publicação de conteúdo no Instagram, Facebook e demais plataformas;</li>
+          <li><strong>Tráfego Pago:</strong> criação, configuração e gestão de campanhas no Meta Ads (Facebook e Instagram);</li>
+          <li><strong>Identidade Visual:</strong> desenvolvimento de logotipo, manual de marca, materiais gráficos digitais e impressos;</li>
+          <li><strong>Marketing para Saúde:</strong> estratégias de marketing digital dentro das normas éticas e regulatórias do Conselho Federal de Odontologia (CFO) e do Conselho Federal de Medicina (CFM).</li>
+        </ul>
+        <p>
+          O escopo detalhado de cada contratação será definido na proposta comercial
+          formal apresentada ao cliente antes do início dos serviços.
+        </p>
+
+        <!-- 3. Contratação e Pagamento -->
+        <h2>3. Contratação e Pagamento</h2>
+
+        <h3>3.1 Proposta e Aprovação</h3>
+        <p>
+          A contratação dos serviços ocorre mediante apresentação de proposta comercial
+          formal pela Agência Bazcar e aprovação expressa por parte do cliente, por
+          escrito ou via mensagem eletrônica (WhatsApp, e-mail).
+        </p>
+
+        <h3>3.2 Condições de Pagamento</h3>
+        <p>
+          As condições de pagamento — valor, periodicidade (mensal, trimestral ou
+          outro), forma (Pix, transferência bancária, boleto) e data de vencimento —
+          serão especificadas na proposta aprovada. O não pagamento na data acordada
+          poderá implicar na suspensão temporária dos serviços e incidência de multa
+          e juros previstos na proposta comercial.
+        </p>
+
+        <h3>3.3 Reajuste</h3>
+        <p>
+          Os valores poderão ser reajustados anualmente com base no IPCA (Índice de
+          Preços ao Consumidor Amplo), mediante comunicação prévia de 30 (trinta) dias.
+        </p>
+
+        <!-- 4. Obrigações da Agência -->
+        <h2>4. Obrigações da Agência Bazcar</h2>
+        <p>A Agência Bazcar se compromete a:</p>
+        <ul>
+          <li>Executar os serviços contratados com dedicação, qualidade e profissionalismo;</li>
+          <li>Cumprir os prazos acordados em proposta ou comunicados ao cliente;</li>
+          <li>Manter canal de comunicação ativo e responder às demandas do cliente em até 48 horas úteis;</li>
+          <li>Elaborar e entregar relatórios mensais de desempenho das campanhas e publicações;</li>
+          <li>Garantir que os conteúdos produzidos estejam em conformidade com as normas do CFO e do CFM, bem como com as políticas de uso das plataformas utilizadas;</li>
+          <li>Tratar com confidencialidade todas as informações fornecidas pelo cliente.</li>
+        </ul>
+
+        <!-- 5. Obrigações do Cliente -->
+        <h2>5. Obrigações do Cliente</h2>
+        <p>O cliente se compromete a:</p>
+        <ul>
+          <li>Fornecer, em tempo hábil, os materiais, informações e aprovações necessários à execução dos serviços (fotos, vídeos, textos, logotipos, dados da clínica);</li>
+          <li>Conceder os acessos necessários às contas de redes sociais, gerenciador de anúncios e demais plataformas, quando aplicável;</li>
+          <li>Revisar e aprovar os conteúdos produzidos no prazo acordado — a ausência de resposta em 72 horas úteis será considerada aprovação tácita;</li>
+          <li>Efetuar os pagamentos nos prazos acordados;</li>
+          <li>Comunicar imediatamente qualquer irregularidade, insatisfação ou mudança de requisitos;</li>
+          <li>Não contratar, durante a vigência do contrato e por 6 meses após seu término, ex-colaboradores da Agência Bazcar que tenham prestado serviços à sua conta, salvo acordo expresso.</li>
+        </ul>
+
+        <!-- 6. Propriedade Intelectual -->
+        <h2>6. Propriedade Intelectual</h2>
+        <p>
+          Os materiais criados pela Agência Bazcar no âmbito dos serviços contratados —
+          incluindo artes, textos, logotipos, vídeos e materiais gráficos — serão
+          considerados propriedade do cliente após a quitação integral dos valores devidos.
+        </p>
+        <p>
+          Até o momento da quitação, a Agência Bazcar mantém os direitos sobre os
+          trabalhos produzidos. O cliente poderá utilizar os materiais para as
+          finalidades contratadas, mas não poderá cedê-los ou revendê-los a terceiros
+          sem autorização prévia e por escrito.
+        </p>
+        <p>
+          A Agência Bazcar reserva-se o direito de incluir os trabalhos realizados em
+          seu portfólio e materiais de divulgação, salvo solicitação expressa de
+          confidencialidade pelo cliente.
+        </p>
+
+        <!-- 7. Sigilo e Confidencialidade -->
+        <h2>7. Sigilo e Confidencialidade</h2>
+        <p>
+          Ambas as partes se obrigam a manter em estrito sigilo todas as informações
+          confidenciais trocadas durante a vigência do contrato e após seu término,
+          incluindo dados de pacientes, estratégias de negócio, dados financeiros,
+          senhas e acessos a plataformas.
+        </p>
+        <p>
+          O dever de confidencialidade persiste por 2 (dois) anos após o encerramento
+          da relação contratual, exceto quando a divulgação for exigida por lei ou
+          ordem judicial.
+        </p>
+
+        <!-- 8. Limitação de Responsabilidade -->
+        <h2>8. Limitação de Responsabilidade</h2>
+        <div class="legal-highlight">
+          <p>
+            <strong>Importante:</strong> A Agência Bazcar não garante resultados
+            específicos de alcance, engajamento, número de seguidores, leads ou
+            conversões em vendas. Os resultados das campanhas de marketing digital
+            dependem de múltiplos fatores externos, como o comportamento dos algoritmos
+            das plataformas, o mercado local, a qualidade dos serviços prestados pelo
+            cliente e o investimento em mídia paga.
+          </p>
+        </div>
+        <p>
+          A Agência Bazcar não se responsabiliza por:
+        </p>
+        <ul>
+          <li>Mudanças nas políticas e algoritmos das plataformas de redes sociais (Instagram, Facebook, Google, etc.) que impactem os resultados das campanhas;</li>
+          <li>Interrupções de serviço causadas pelas próprias plataformas;</li>
+          <li>Conteúdo fornecido pelo cliente que contenha informações incorretas, enganosas ou que viole direitos de terceiros;</li>
+          <li>Danos indiretos, lucros cessantes ou danos emergentes decorrentes do uso ou da impossibilidade de uso dos serviços.</li>
+        </ul>
+        <p>
+          A responsabilidade total da Agência Bazcar ficará limitada ao valor
+          efetivamente pago pelo cliente nos 3 (três) meses anteriores ao evento
+          gerador do dano.
+        </p>
+
+        <!-- 9. Rescisão Contratual -->
+        <h2>9. Rescisão Contratual</h2>
+        <p>
+          Qualquer das partes poderá rescindir o contrato mediante aviso prévio de
+          <strong>30 (trinta) dias corridos</strong>, comunicado por escrito (e-mail
+          ou WhatsApp com confirmação de recebimento).
+        </p>
+        <p>
+          Em caso de rescisão por iniciativa do cliente antes do término de um ciclo
+          de serviços já iniciado (mês, campanha ou projeto), o valor integral do
+          período em curso será devido, não sendo cabível restituição proporcional.
+        </p>
+        <p>
+          A Agência Bazcar poderá rescindir o contrato imediatamente, sem ônus, nos
+          seguintes casos:
+        </p>
+        <ul>
+          <li>Inadimplência do cliente por período superior a 15 (quinze) dias após o vencimento;</li>
+          <li>Solicitação pelo cliente de práticas que violem as normas do CFO, CFM, a legislação brasileira ou as políticas das plataformas;</li>
+          <li>Comportamento abusivo ou assédio direcionado à equipe da agência.</li>
+        </ul>
+
+        <!-- 10. Legislação Aplicável -->
+        <h2>10. Legislação Aplicável e Foro</h2>
+        <p>
+          Este documento é regido pelas leis da República Federativa do Brasil,
+          especialmente pelo Código Civil (Lei nº 10.406/2002), pelo Código de Defesa
+          do Consumidor (Lei nº 8.078/1990) e pela Lei Geral de Proteção de Dados
+          (Lei nº 13.709/2018 — LGPD).
+        </p>
+        <p>
+          Fica eleito o foro da Comarca de <strong>Salvador, Bahia</strong>, para
+          dirimir quaisquer controvérsias oriundas deste instrumento, renunciando-se
+          a qualquer outro, por mais privilegiado que seja.
+        </p>
+
+        <!-- 11. Atualizações dos Termos -->
+        <h2>11. Atualizações destes Termos</h2>
+        <p>
+          A Agência Bazcar reserva-se o direito de atualizar estes Termos de Uso a
+          qualquer momento. Alterações relevantes serão comunicadas ao cliente com
+          antecedência mínima de 15 (quinze) dias, por e-mail ou WhatsApp.
+        </p>
+        <p>
+          A continuidade do uso dos serviços após a comunicação implica na aceitação
+          das novas condições.
+        </p>
+
+        <!-- 12. Dúvidas e Contato -->
+        <h2>12. Dúvidas e Contato</h2>
+        <p>
+          Para esclarecimentos, dúvidas ou manifestações sobre estes Termos de Uso,
+          entre em contato:
+        </p>
+        <ul>
+          <li><strong>E-mail:</strong> <a href="mailto:estudiobazcar@gmail.com">estudiobazcar@gmail.com</a></li>
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/5571984027347" target="_blank" rel="noopener">+55 71 98402-7347</a></li>
+        </ul>
+
+        <!-- Botão voltar -->
+        <div class="back-btn-wrap">
+          <a href="../index.html" class="btn btn-outline">
+            <i class="fas fa-arrow-left"></i>
+            Voltar ao site
+          </a>
+          &nbsp;
+          <a href="politica-de-privacidade.html" class="btn btn-gold" style="margin-top:8px;">
+            Política de Privacidade
+          </a>
+        </div>
+
+      </div><!-- /legal-body -->
+    </div><!-- /legal-wrap -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">
+          © 2026 <span>Agência Bazcar</span>. Todos os direitos reservados.<br />
+          Marketing Digital para Saúde &amp; Odontologia · Bahia, Brasil
+        </p>
+
+        <div class="footer-links">
+          <a href="../index.html">Início</a>
+          <a href="../index.html#contato">Contato</a>
+          <a href="termos-de-uso.html">Termos de Uso</a>
+          <a href="politica-de-privacidade.html">Privacidade</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://www.instagram.com/agenciabazcar/" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/5571984027347" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:estudiobazcar@gmail.com" class="social-btn" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

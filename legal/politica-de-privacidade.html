@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Política de Privacidade da Agência Bazcar — em conformidade com a LGPD (Lei nº 13.709/2018). Saiba como seus dados são coletados, usados e protegidos." />
+  <meta name="robots" content="noindex, follow" />
+  <title>Política de Privacidade | Agência Bazcar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+
+  <style>
+    /* === LEGAL PAGE — estilos específicos === */
+    .legal-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--gray-dim);
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--gold); transition: opacity 0.2s; }
+    .breadcrumb a:hover { opacity: 0.8; }
+    .breadcrumb i { font-size: 0.65rem; color: var(--gray-dim); }
+
+    .legal-header {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--glass-bdr);
+    }
+    .legal-header .label { margin-bottom: 12px; }
+    .legal-header h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .legal-meta {
+      font-size: 0.82rem;
+      color: var(--gray-dim);
+    }
+    .legal-meta span { color: var(--gold); }
+
+    .legal-body h2 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      margin: 40px 0 14px;
+      padding-left: 14px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .legal-body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin: 24px 0 10px;
+    }
+
+    .legal-body p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .legal-body ul, .legal-body ol {
+      margin: 12px 0 20px 20px;
+    }
+    .legal-body li {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .legal-body li::marker { color: var(--gold); }
+
+    .legal-body strong { color: var(--white); font-weight: 600; }
+
+    .legal-body a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-decoration-color: rgba(245,166,35,0.4);
+      transition: text-decoration-color 0.2s;
+    }
+    .legal-body a:hover { text-decoration-color: var(--gold); }
+
+    .legal-highlight {
+      background: rgba(245,166,35,0.06);
+      border: 1px solid rgba(245,166,35,0.15);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .legal-highlight p { margin-bottom: 0; }
+
+    .lgpd-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(245,166,35,0.1);
+      border: 1px solid rgba(245,166,35,0.25);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .right-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-bdr);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .right-item i { color: var(--gold); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+    .right-item span { font-size: 0.88rem; color: var(--gray); line-height: 1.5; }
+
+    .back-btn-wrap {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--glass-bdr);
+    }
+
+    @media (max-width: 600px) {
+      .rights-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5571984027347?text=Olá! Vim pelo site da Agência Bazcar e gostaria de saber mais sobre os serviços."
+     class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" aria-label="Navegação principal">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="logo" aria-label="Agência Bazcar">
+          <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+          Agência <span>Bazcar</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="../index.html#servicos">Serviços</a></li>
+          <li><a href="../index.html#resultados">Resultados</a></li>
+          <li><a href="../index.html#sobre">Sobre</a></li>
+          <li><a href="../index.html#contato">Contato</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="https://wa.me/5571984027347?text=Olá! Vim pelo site da Agência Bazcar."
+             class="btn btn-gold" target="_blank" rel="noopener" style="padding:10px 22px; font-size:0.88rem;">
+            <i class="fab fa-whatsapp"></i> Falar Agora
+          </a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+    <a href="../index.html#servicos" class="mobile-link">Serviços</a>
+    <a href="../index.html#resultados" class="mobile-link">Resultados</a>
+    <a href="../index.html#sobre" class="mobile-link">Sobre</a>
+    <a href="../index.html#contato" class="mobile-link">Contato</a>
+    <a href="https://wa.me/5571984027347" class="btn btn-wa" target="_blank" rel="noopener" style="margin-top:12px;">
+      <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+    </a>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main style="padding-top: 88px;">
+    <div class="legal-wrap">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Localização na página">
+        <a href="../index.html">Início</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Política de Privacidade</span>
+      </nav>
+
+      <!-- Cabeçalho -->
+      <header class="legal-header">
+        <div class="lgpd-badge">
+          <i class="fas fa-shield-halved"></i>
+          Conforme LGPD — Lei nº 13.709/2018
+        </div>
+        <div class="label">
+          <div class="gold-line"></div>
+          Documentos Legais
+        </div>
+        <h1>Política de Privacidade</h1>
+        <p class="legal-meta">
+          Última atualização: <span>Janeiro de 2026</span> &nbsp;·&nbsp;
+          Versão 1.0
+        </p>
+      </header>
+
+      <!-- Corpo -->
+      <div class="legal-body">
+
+        <p>
+          A <strong>Agência Bazcar</strong> respeita e protege a privacidade de seus
+          clientes e visitantes. Esta Política descreve como coletamos, utilizamos,
+          armazenamos e protegemos seus dados pessoais, em conformidade com a
+          <strong>Lei Geral de Proteção de Dados — LGPD (Lei nº 13.709/2018)</strong>
+          e demais normas aplicáveis.
+        </p>
+
+        <!-- 1. Identificação do Controlador -->
+        <h2>1. Identificação do Controlador de Dados</h2>
+        <div class="legal-highlight">
+          <p>
+            <strong>Controlador:</strong> Agência Bazcar / Estúdio Bazcar<br />
+            <strong>Responsável pelo tratamento de dados (DPO):</strong> Hudson Oliveira<br />
+            <strong>E-mail para exercício de direitos:</strong> <a href="mailto:estudiobazcar@gmail.com">estudiobazcar@gmail.com</a><br />
+            <strong>WhatsApp:</strong> <a href="https://wa.me/5571984027347" target="_blank" rel="noopener">+55 71 98402-7347</a><br />
+            <strong>Localização:</strong> Bahia, Brasil
+          </p>
+        </div>
+
+        <!-- 2. Quais dados coletamos -->
+        <h2>2. Quais Dados Pessoais Coletamos</h2>
+
+        <h3>2.1 Dados fornecidos diretamente pelo usuário</h3>
+        <p>
+          Ao entrar em contato via WhatsApp, e-mail ou formulários do site, você pode
+          fornecer voluntariamente:
+        </p>
+        <ul>
+          <li>Nome completo;</li>
+          <li>Número de telefone e/ou WhatsApp;</li>
+          <li>Endereço de e-mail;</li>
+          <li>Nome da clínica ou consultório;</li>
+          <li>Cidade e estado;</li>
+          <li>Informações sobre necessidades e objetivos de marketing.</li>
+        </ul>
+
+        <h3>2.2 Dados coletados automaticamente pela navegação</h3>
+        <p>
+          Ao acessar nosso site, podem ser coletados automaticamente:
+        </p>
+        <ul>
+          <li>Endereço IP e dados de localização aproximada;</li>
+          <li>Tipo de navegador, dispositivo e sistema operacional;</li>
+          <li>Páginas visitadas, tempo de permanência e origem do acesso;</li>
+          <li>Dados de cookies e tecnologias similares (veja Seção 8).</li>
+        </ul>
+        <p>
+          Caso o site utilize Google Analytics ou Meta Pixel, esses dados podem ser
+          compartilhados com as respectivas plataformas para fins estatísticos e de
+          desempenho de campanhas.
+        </p>
+
+        <!-- 3. Como usamos -->
+        <h2>3. Como Utilizamos Seus Dados</h2>
+        <p>Seus dados pessoais são utilizados para as seguintes finalidades:</p>
+        <ul>
+          <li><strong>Atendimento e propostas comerciais:</strong> responder solicitações de contato, elaborar e enviar propostas de serviços;</li>
+          <li><strong>Execução dos serviços contratados:</strong> gestão de contas de redes sociais, campanhas de tráfego pago e produção de conteúdo;</li>
+          <li><strong>Comunicações comerciais:</strong> envio de informações sobre novos serviços, dicas de marketing digital e novidades da agência, sempre com consentimento prévio;</li>
+          <li><strong>Melhoria do site:</strong> análise de tráfego e comportamento de usuários para aprimorar a experiência de navegação;</li>
+          <li><strong>Cumprimento de obrigações legais:</strong> quando exigido por lei, regulamentação ou ordem judicial.</li>
+        </ul>
+
+        <!-- 4. Base Legal LGPD -->
+        <h2>4. Base Legal para o Tratamento (LGPD)</h2>
+        <p>
+          Todo tratamento de dados realizado pela Agência Bazcar é fundamentado em
+          uma das hipóteses legais previstas no <strong>Art. 7º da LGPD</strong>:
+        </p>
+        <ul>
+          <li>
+            <strong>Consentimento (Art. 7º, I):</strong> quando você nos fornece seus
+            dados voluntariamente para receber informações comerciais ou utilizar
+            funcionalidades do site;
+          </li>
+          <li>
+            <strong>Execução de contrato (Art. 7º, V):</strong> quando o tratamento
+            é necessário para a prestação dos serviços contratados;
+          </li>
+          <li>
+            <strong>Legítimo interesse (Art. 7º, IX):</strong> para fins de análise
+            de desempenho do site e melhoria dos serviços oferecidos, desde que não
+            prevaleçam os interesses ou direitos fundamentais do titular;
+          </li>
+          <li>
+            <strong>Cumprimento de obrigação legal (Art. 7º, II):</strong> quando
+            exigido por autoridade competente ou legislação aplicável.
+          </li>
+        </ul>
+
+        <!-- 5. Compartilhamento -->
+        <h2>5. Compartilhamento de Dados</h2>
+        <p>
+          <strong>A Agência Bazcar não vende, aluga nem comercializa dados pessoais
+          a terceiros.</strong>
+        </p>
+        <p>
+          Seus dados poderão ser compartilhados apenas com parceiros operacionais
+          estritamente necessários à execução dos serviços, incluindo:
+        </p>
+        <ul>
+          <li>
+            <strong>Google LLC</strong> (Google Analytics) — para análise de
+            tráfego e desempenho do site. Sujeito à
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a>;
+          </li>
+          <li>
+            <strong>Meta Platforms Inc.</strong> (Facebook, Instagram, Meta Ads) — para
+            publicação de conteúdo e campanhas de tráfego pago. Sujeito à
+            <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Política de Privacidade da Meta</a>;
+          </li>
+          <li>
+            <strong>Plataformas de comunicação</strong> (WhatsApp Business API, Gmail) —
+            para troca de mensagens e atendimento ao cliente.
+          </li>
+        </ul>
+        <p>
+          Esses parceiros atuam como operadores de dados e são contratualmente obrigados
+          a tratar os dados somente conforme nossas instruções e as leis aplicáveis.
+        </p>
+
+        <!-- 6. Retenção -->
+        <h2>6. Retenção e Exclusão dos Dados</h2>
+        <p>
+          Seus dados pessoais serão mantidos pelo período necessário para:
+        </p>
+        <ul>
+          <li>A execução dos serviços contratados;</li>
+          <li>O cumprimento de obrigações legais (ex.: registros fiscais, por até 5 anos);</li>
+          <li>A resolução de eventuais disputas contratuais.</li>
+        </ul>
+        <p>
+          Após o término da relação contratual e o vencimento dos prazos legais
+          aplicáveis, os dados serão excluídos de forma segura ou anonimizados,
+          salvo se houver consentimento para manutenção ou outra base legal vigente.
+        </p>
+        <p>
+          Dados coletados para comunicações comerciais serão mantidos até a revogação
+          do consentimento pelo titular.
+        </p>
+
+        <!-- 7. Direitos do Titular -->
+        <h2>7. Seus Direitos como Titular dos Dados (LGPD Art. 18)</h2>
+        <p>
+          Nos termos do <strong>Art. 18 da LGPD</strong>, você tem os seguintes
+          direitos sobre seus dados pessoais:
+        </p>
+
+        <div class="rights-grid">
+          <div class="right-item">
+            <i class="fas fa-eye"></i>
+            <span><strong>Acesso</strong> — confirmar a existência de tratamento e acessar seus dados</span>
+          </div>
+          <div class="right-item">
+            <i class="fas fa-pen"></i>
+            <span><strong>Correção</strong> — solicitar atualização de dados incompletos ou incorretos</span>
+          </div>
+          <div class="right-item">
+            <i class="fas fa-trash"></i>
+            <span><strong>Exclusão</strong> — solicitar a exclusão de dados desnecessários ou tratados em desconformidade</span>
+          </div>
+          <div class="right-item">
+            <i class="fas fa-file-export"></i>
+            <span><strong>Portabilidade</strong> — receber seus dados em formato estruturado e interoperável</span>
+          </div>
+          <div class="right-item">
+            <i class="fas fa-ban"></i>
+            <span><strong>Oposição</strong> — opor-se ao tratamento realizado com base no legítimo interesse</span>
+          </div>
+          <div class="right-item">
+            <i class="fas fa-times-circle"></i>
+            <span><strong>Revogação</strong> — retirar o consentimento a qualquer momento</span>
+          </div>
+          <div class="right-item">
+            <i class="fas fa-info-circle"></i>
+            <span><strong>Informação</strong> — ser informado sobre compartilhamento com terceiros</span>
+          </div>
+          <div class="right-item">
+            <i class="fas fa-gavel"></i>
+            <span><strong>Revisão</strong> — solicitar revisão de decisões automatizadas que afetem seus interesses</span>
+          </div>
+        </div>
+
+        <p>
+          Para exercer qualquer um desses direitos, entre em contato:
+        </p>
+        <ul>
+          <li><strong>E-mail:</strong> <a href="mailto:estudiobazcar@gmail.com">estudiobazcar@gmail.com</a></li>
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/5571984027347" target="_blank" rel="noopener">+55 71 98402-7347</a></li>
+        </ul>
+        <p>
+          Responderemos à sua solicitação em até <strong>15 dias úteis</strong>, conforme
+          prazo estabelecido pela LGPD (Art. 18, § 3º).
+        </p>
+
+        <!-- 8. Cookies -->
+        <h2>8. Cookies e Tecnologias de Rastreamento</h2>
+
+        <h3>8.1 O que são cookies</h3>
+        <p>
+          Cookies são pequenos arquivos de texto armazenados no seu dispositivo ao
+          visitar um site. Eles permitem que o site reconheça seu navegador em visitas
+          futuras e melhore sua experiência de navegação.
+        </p>
+
+        <h3>8.2 Tipos de cookies utilizados</h3>
+        <ul>
+          <li>
+            <strong>Cookies essenciais:</strong> necessários para o funcionamento básico
+            do site. Não podem ser desativados sem impactar a navegação;
+          </li>
+          <li>
+            <strong>Cookies analíticos (Google Analytics):</strong> coletam informações
+            sobre como os visitantes usam o site — páginas mais acessadas, tempo de
+            permanência — de forma anônima e agregada;
+          </li>
+          <li>
+            <strong>Cookies de marketing (Meta Pixel):</strong> quando ativos, permitem
+            medir a eficácia de campanhas publicitárias no Facebook e Instagram.
+          </li>
+        </ul>
+
+        <h3>8.3 Como desativar cookies</h3>
+        <p>
+          Você pode desativar ou gerenciar cookies pelas configurações do seu navegador:
+        </p>
+        <ul>
+          <li>Chrome: <em>Configurações → Privacidade e segurança → Cookies e outros dados do site</em></li>
+          <li>Firefox: <em>Configurações → Privacidade e segurança → Cookies e dados do site</em></li>
+          <li>Safari: <em>Preferências → Privacidade → Gerenciar dados de sites</em></li>
+          <li>Edge: <em>Configurações → Privacidade, pesquisa e serviços → Cookies</em></li>
+        </ul>
+        <p>
+          A desativação de cookies analíticos e de marketing não afeta o funcionamento
+          do site, mas pode limitar a personalização da experiência.
+        </p>
+
+        <!-- 9. Segurança -->
+        <h2>9. Segurança dos Dados</h2>
+        <p>
+          Adotamos medidas técnicas e organizacionais adequadas para proteger seus
+          dados pessoais contra acesso não autorizado, alteração, divulgação ou
+          destruição, incluindo:
+        </p>
+        <ul>
+          <li>Transmissão de dados via protocolo HTTPS;</li>
+          <li>Acesso restrito a dados pessoais por colaboradores autorizados;</li>
+          <li>Revisão periódica de acessos e permissões a plataformas;</li>
+          <li>Uso de autenticação de dois fatores (2FA) em contas críticas.</li>
+        </ul>
+        <p>
+          Em caso de incidente de segurança que possa afetar seus dados, notificaremos
+          a Autoridade Nacional de Proteção de Dados (ANPD) e os titulares afetados nos
+          prazos previstos pela LGPD.
+        </p>
+
+        <!-- 10. Alterações -->
+        <h2>10. Alterações nesta Política</h2>
+        <p>
+          Esta Política de Privacidade pode ser atualizada periodicamente para refletir
+          mudanças nos serviços, na legislação ou nas práticas de privacidade.
+          Comunicaremos alterações relevantes por e-mail ou por aviso no site, com
+          antecedência mínima de 15 (quinze) dias.
+        </p>
+        <p>
+          A data da última atualização está indicada no cabeçalho deste documento.
+          Recomendamos a revisão periódica desta página.
+        </p>
+
+        <!-- 11. Contato do DPO -->
+        <h2>11. Contato do Responsável pelos Dados (DPO)</h2>
+        <p>
+          Para qualquer questão relacionada ao tratamento de seus dados pessoais,
+          ao exercício de seus direitos ou para apresentar uma reclamação, entre em
+          contato com nosso responsável:
+        </p>
+        <div class="legal-highlight">
+          <p>
+            <strong>Responsável:</strong> Hudson Oliveira — Agência Bazcar<br />
+            <strong>E-mail:</strong> <a href="mailto:estudiobazcar@gmail.com">estudiobazcar@gmail.com</a><br />
+            <strong>WhatsApp:</strong> <a href="https://wa.me/5571984027347" target="_blank" rel="noopener">+55 71 98402-7347</a><br />
+            <strong>Prazo de resposta:</strong> até 15 dias úteis
+          </p>
+        </div>
+        <p>
+          Caso sua solicitação não seja atendida de forma satisfatória, você tem o
+          direito de apresentar reclamação à <strong>Autoridade Nacional de Proteção
+          de Dados (ANPD)</strong>, órgão fiscalizador da LGPD no Brasil.
+        </p>
+
+        <!-- Botão voltar -->
+        <div class="back-btn-wrap">
+          <a href="../index.html" class="btn btn-outline">
+            <i class="fas fa-arrow-left"></i>
+            Voltar ao site
+          </a>
+          &nbsp;
+          <a href="termos-de-uso.html" class="btn btn-gold" style="margin-top:8px;">
+            Termos de Uso
+          </a>
+        </div>
+
+      </div><!-- /legal-body -->
+    </div><!-- /legal-wrap -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">
+          © 2026 <span>Agência Bazcar</span>. Todos os direitos reservados.<br />
+          Marketing Digital para Saúde &amp; Odontologia · Bahia, Brasil
+        </p>
+
+        <div class="footer-links">
+          <a href="../index.html">Início</a>
+          <a href="../index.html#contato">Contato</a>
+          <a href="termos-de-uso.html">Termos de Uso</a>
+          <a href="politica-de-privacidade.html">Privacidade</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://www.instagram.com/agenciabazcar/" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/5571984027347" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:estudiobazcar@gmail.com" class="social-btn" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
