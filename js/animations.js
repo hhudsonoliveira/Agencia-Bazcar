@@ -198,6 +198,7 @@
     // Lightbox
     var lightbox = document.getElementById('lightbox');
     var lbImg    = document.getElementById('lightboxImg');
+    var lbVideo  = document.getElementById('lightboxVideo');
     var lbClose  = document.getElementById('lightboxClose');
     var lbPrev   = document.getElementById('lightboxPrev');
     var lbNext   = document.getElementById('lightboxNext');
@@ -212,13 +213,36 @@
       lbIdx = found !== -1 ? found : 0;
       lbImg.src = src;
       lbImg.alt = alt;
+      lbImg.style.display = '';
+      lbVideo.style.display = 'none';
+      lbVideo.pause();
+      lbVideo.src = '';
+      lbPrev.style.display = '';
+      lbNext.style.display = '';
       lightbox.removeAttribute('hidden');
       lbClose.focus();
       track.style.animationPlayState = 'paused';
     }
 
+    function openVideoLightbox(src) {
+      lbImg.style.display = 'none';
+      lbVideo.style.display = '';
+      lbVideo.src = src;
+      lbPrev.style.display = 'none';
+      lbNext.style.display = 'none';
+      lightbox.removeAttribute('hidden');
+      lbClose.focus();
+      track.style.animationPlayState = 'paused';
+      lbVideo.play().catch(function () {});
+    }
+
     function closeLightbox() {
       lightbox.setAttribute('hidden', '');
+      lbVideo.pause();
+      lbVideo.src = '';
+      lbImg.style.display = '';
+      lbPrev.style.display = '';
+      lbNext.style.display = '';
       track.style.animationPlayState = '';
     }
 
@@ -230,10 +254,15 @@
 
     // Delegate click on track (handles both originals and clones)
     track.addEventListener('click', function (e) {
-      var slide = e.target.closest('.carousel-slide[data-type="image"]');
+      var slide = e.target.closest('.carousel-slide');
       if (!slide) return;
-      var img = slide.querySelector('img');
-      if (img) openLightbox(img.src, img.alt);
+      if (slide.dataset.type === 'image') {
+        var img = slide.querySelector('img');
+        if (img) openLightbox(img.src, img.alt);
+      } else if (slide.dataset.type === 'video') {
+        var vid = slide.querySelector('video');
+        if (vid) openVideoLightbox(vid.src);
+      }
     });
 
     lbClose.addEventListener('click', closeLightbox);
