@@ -86,4 +86,29 @@
     });
   }
 
+
+  /* === 3D TILT — service cards === */
+  var tiltCards = document.querySelectorAll('.service-card');
+  var noTilt    = window.matchMedia('(hover: none)').matches; // não aplica em touch
+
+  if (!noTilt) {
+    tiltCards.forEach(function (card) {
+      card.addEventListener('mouseenter', function () {
+        card.style.transition = 'border-color 0.35s, box-shadow 0.35s, transform 0.12s ease';
+      });
+
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var rx   = -((e.clientY - rect.top)  / rect.height - 0.5) * 14;
+        var ry   =  ((e.clientX - rect.left) / rect.width  - 0.5) * 14;
+        card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateZ(8px)';
+      });
+
+      card.addEventListener('mouseleave', function () {
+        card.style.transition = 'border-color 0.35s, box-shadow 0.35s, transform 0.5s ease';
+        card.style.transform  = '';
+      });
+    });
+  }
+
 })();
