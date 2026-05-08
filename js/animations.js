@@ -226,7 +226,7 @@
 
     function openVideoLightbox(src) {
       lbImg.style.display = 'none';
-      lbVideo.style.display = '';
+      lbVideo.style.display = 'block';
       lbVideo.src = src;
       lbPrev.style.display = 'none';
       lbNext.style.display = 'none';
@@ -240,6 +240,7 @@
       lightbox.setAttribute('hidden', '');
       lbVideo.pause();
       lbVideo.src = '';
+      lbVideo.style.display = 'none';
       lbImg.style.display = '';
       lbPrev.style.display = '';
       lbNext.style.display = '';
